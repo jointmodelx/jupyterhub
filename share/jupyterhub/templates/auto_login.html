@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var username = getQueryString("username");
+        var password = getQueryString("password");
+        var contentFrame = parent.window.frames["contentFrame"];
+        if (contentFrame != null) {
+            var frameDoc = contentFrame.document;
+            if (null != frameDoc.getElementById("username_input")) {
+                frameDoc.getElementById("username_input").value = username;
+                frameDoc.getElementById("password_input").value = password;
+                frameDoc.getElementById("login_submit").click();
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
